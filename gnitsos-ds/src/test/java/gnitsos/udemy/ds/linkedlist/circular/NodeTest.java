@@ -1,8 +1,10 @@
-package gnitsos.udemy.ds.linkedlist;
+package gnitsos.udemy.ds.linkedlist.circular;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+
+import gnitsos.udemy.ds.linkedlist.circular.Node;
 
 class NodeTest {
 

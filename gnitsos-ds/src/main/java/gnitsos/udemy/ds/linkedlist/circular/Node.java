@@ -1,4 +1,4 @@
-package gnitsos.udemy.ds.linkedlist;
+package gnitsos.udemy.ds.linkedlist.circular;
 
 public class Node<T> {
 	private Node<T> next = null;
