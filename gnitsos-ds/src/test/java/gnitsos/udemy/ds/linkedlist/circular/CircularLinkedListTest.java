@@ -6,9 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import gnitsos.udemy.ds.linkedlist.circular.CircularLinkedList;
-import gnitsos.udemy.ds.linkedlist.circular.EmptyListException;
-import gnitsos.udemy.ds.linkedlist.circular.Node;
+import gnitsos.udemy.ds.list.EmptyListException;
+import gnitsos.udemy.ds.list.linked.circular.CircularLinkedList;
 
 public class CircularLinkedListTest {
 
@@ -17,10 +16,10 @@ public class CircularLinkedListTest {
 	@BeforeEach
 	public void init() {
 		list = new CircularLinkedList<>();
-		list.insertLast(new Node<String>("Giwrgos"));
-		list.insertLast(new Node<String>("Fanis"));
-		list.insertLast(new Node<String>("Eleni"));
-		list.insertLast(new Node<String>("Dimitris"));
+		list.insertLast("Giwrgos");
+		list.insertLast("Fanis");
+		list.insertLast("Eleni");
+		list.insertLast("Dimitris");
 	}
 
 	@Test
@@ -30,26 +29,26 @@ public class CircularLinkedListTest {
 
 	@Test
 	public void getHeadTest() {
-		assertEquals("Giwrgos", list.getFirst().getData());
+		assertEquals("Giwrgos", list.getFirst());
 	}
 
 	@Test
 	public void getLastTest() {
-		assertEquals("Dimitris", list.getLast().getData());
+		assertEquals("Dimitris", list.getLast());
 	}
 
 	@Test
 	public void removeHead() throws Exception{
-		assertEquals("Giwrgos", list.removeFirst().getData());
+		assertEquals("Giwrgos", list.removeFirst());
 		assertEquals(3, list.length());
 		
-		assertEquals("Fanis", list.removeFirst().getData());
+		assertEquals("Fanis", list.removeFirst());
 		assertEquals(2, list.length());
 		
-		assertEquals("Eleni", list.removeFirst().getData());
+		assertEquals("Eleni", list.removeFirst());
 		assertEquals(1, list.length());
 		
-		assertEquals("Dimitris", list.removeFirst().getData());
+		assertEquals("Dimitris", list.removeFirst());
 		assertEquals(0, list.length());
 		
 		Assertions.assertThrows(EmptyListException.class,()-> list.removeFirst());
@@ -59,12 +58,12 @@ public class CircularLinkedListTest {
 	public void insertLastTest() throws Exception{
 		CircularLinkedList<String> testList = new CircularLinkedList<>();
 		
-		testList.insertLast(new Node<String>("Apple"));
-		assertEquals("Apple", testList.getFirst().getData());
+		testList.insertLast("Apple");
+		assertEquals("Apple", testList.getFirst());
 		assertEquals(1, testList.length());
 		
-		testList.insertLast(new Node<String>("Banana"));
-		assertEquals("Apple", testList.getFirst().getData());
+		testList.insertLast("Banana");
+		assertEquals("Apple", testList.getFirst());
 		assertEquals(2, testList.length());
 	}
 	
@@ -72,13 +71,13 @@ public class CircularLinkedListTest {
 	public void insertFirstTest() throws Exception{
 		CircularLinkedList<String> testList = new CircularLinkedList<>();
 		
-		testList.insertFirst(new Node<String>("Apple"));
-		assertEquals("Apple", testList.getFirst().getData());
+		testList.insertFirst("Apple");
+		assertEquals("Apple", testList.getFirst());
 		assertEquals(1, testList.length());
 		
-		testList.insertFirst(new Node<String>("Banana"));
-		assertEquals("Banana", testList.getFirst().getData());
-		assertEquals("Apple", testList.getLast().getData());
+		testList.insertFirst("Banana");
+		assertEquals("Banana", testList.getFirst());
+		assertEquals("Apple", testList.getLast());
 		assertEquals(2, testList.length());
 	}
 }

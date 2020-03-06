@@ -1,4 +1,4 @@
-package gnitsos.udemy.ds.linkedlist.circular;
+package gnitsos.udemy.ds.list;
 
 public class EmptyListException extends Exception {
 
